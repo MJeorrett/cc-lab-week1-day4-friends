@@ -75,5 +75,16 @@ def group_by_tv_show(people)
       tv_groupings[tv_show] = [person_name]
     end
   end
+
+  # remove tv shows with only one person
+  tv_shows_to_remove = []
+  for tv_show, person_array in tv_groupings
+    tv_shows_to_remove.push(tv_show) if person_array.length <= 1
+  end
+
+  for unpopular_tv_show in tv_shows_to_remove
+    tv_groupings.delete(unpopular_tv_show)
+  end
+
   return tv_groupings
 end

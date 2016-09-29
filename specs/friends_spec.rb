@@ -178,9 +178,6 @@ end
   # Find the people who have the same favourite tv show
   def test_group_by_tv_show()
     expected = {
-      "Friends" => [
-        "Rick"
-      ],
       "Scrubs" => [
         "Jay",
         "Marc"
